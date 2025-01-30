@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luma</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>            
+            <li><a href="#contexte">Contexte</a></li>
+            {# ... #}
+            <li><a href="#gestes">Gestes Simples</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="intro">
+        <h1>Bienvenue sur Sobriété Numérique</h1>
+        <p>Luma vous guide pour réduire l’impact énergétique de vos loisirs numériques.</p>
+        <video autoplay muted loop>
+            <source src="assets/videos/intro.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section id="contexte">
+        <h2>Comprendre l'impact</h2>
+        <canvas id="energyChart"></canvas>
+    </section>
+
+    {# ... #}
+
+</main>
+
+<footer>
+    <p>&copy; 2025 - Projet de la Ligue pour une Utilisation Modérée et Accessible | Sobriété Numérique</p>
+</footer>
+
+{# Bibliothèques externes  #}
+<script src="libs/chart.min.js"></script>
+<script src="libs/gsap.min.js"></script>
+<script src="libs/lottie.min.js"></script>
+
+</body>
+</html>
