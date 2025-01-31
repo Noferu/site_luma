@@ -49,6 +49,7 @@ h1 {
     margin-bottom: 15vh;
     font-stretch: expanded;
     transition: transform 0.7s ease;
+    cursor: default;
     width: 80%;
 }
 
@@ -72,8 +73,10 @@ h2 {
     font-weight: normal;
     font-stretch: expanded;
     font-size: 3rem;
+    margin: auto;
     margin-bottom: 5vw;
     margin-top: 5vh;
+    width: 70%;
 }
 
 /* ========== Section Introductive ========== */
@@ -132,6 +135,7 @@ section#intro {
 
 .video-button:active .mid {
     opacity: 0;
+    transition: opacity 10ms ease-in-out;
 }
 
 .video-button .bottom {
@@ -151,7 +155,9 @@ section#intro {
     color: #ffffff;
     z-index: 3;
     transform: translateY(-1%);
+    text-shadow: 1px -2px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
     transition: transform 70ms ease-in-out;
+    user-select: none;
 }
 
 .video-button:hover .content {
@@ -159,6 +165,7 @@ section#intro {
 }
 
 .video-button:active .content {
+    color: #cccccc;
     transform: translateY(4%);
 }
 
@@ -175,10 +182,16 @@ section#intro {
     transform: translateY(10%);
 }
 
-/* ========== Sections avec une vague ========== */
+/* ========== Sections générales ========== */
+
+section div.content p strong {
+    font-weight: bold;
+    font-size: 110%;
+}
 
 section.with-wave {
     position: relative;
+    padding-bottom: 50vh;
 }
 
 section.with-wave svg.wave {
@@ -189,11 +202,81 @@ section.with-wave svg.wave {
     height: auto;
 }
 
+section.with-wave .arrow {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    bottom: 99.9%;
+    left: 0;
+    z-index: 3;
+}
+
+section.with-wave .left-arrow {
+    left: 8%;
+    animation: wobble-ver-left 3s ease-in-out infinite;
+}
+
+section.with-wave .right-arrow {
+    left: 85%;
+    transform: scaleX(-1);
+    animation: wobble-ver-right 3s ease-in-out infinite;
+}
+
+@keyframes wobble-ver-right {
+    0% {
+        transform: translateY(0) rotate(0) scaleX(-1);
+    }
+    9% {
+        transform: translateY(-30px) rotate(-6deg) scaleX(-1); 
+    }
+    18% {
+        transform: translateY(15px) rotate(6deg) scaleX(-1); 
+    }
+    28% {
+        transform: translateY(-15px) rotate(-3.6deg) scaleX(-1); 
+    }
+    37% {
+        transform: translateY(9px) rotate(2.4deg) scaleX(-1); 
+    }
+    50% {
+        transform: translateY(-6px) rotate(-1.2deg) scaleX(-1); 
+    }
+    50%, 100% {
+        transform: translateY(0) rotate(0) scaleX(-1);
+    }
+}
+
+
+@keyframes wobble-ver-left {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    9% {
+        transform: translateY(-30px) rotate(6deg);
+    }
+    18% {
+        transform: translateY(15px) rotate(-6deg);
+    }
+    28% {
+        transform: translateY(-15px) rotate(3.6deg);
+    }
+    37% {
+        transform: translateY(9px) rotate(-2.4deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(1.2deg);
+    }
+    50%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+
 /* ========== Section Contexte ========== */
 
 section#contexte {
     background-color: #d6ea79;
-    padding-bottom: 50vh;
     margin-top: 50vh;
 }
 
@@ -222,22 +305,17 @@ section#contexte div.content p:last-child {
     text-align: end;
 }
 
-section#contexte div.content p strong {
-    font-weight: bold;
-    font-size: 110%;
-}
+/* ========== Section La part entre les appareils ========== */
 
-/* ========== Section Graphique ========== */
-
-section#graphique {
+section#part-entre-appareils {
     background-color: #e5e5e5;
 }
 
-section#graphique * {
+section#part-entre-appareils * {
     z-index: 2;
 }
 
-section#graphique img.pattern {
+section#part-entre-appareils img.pattern {
     position: absolute;
     bottom: 100%;
     left: 0;
@@ -246,6 +324,75 @@ section#graphique img.pattern {
     z-index: 1;
 }
 
-section#graphique video {
+section#part-entre-appareils div.content {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 70%;
+}
+
+section#part-entre-appareils div.content video {
+    width: auto;
+    height: 400px;
+}
+
+section#part-entre-appareils div.content #chart-pie {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: black;
+    border-radius: 500px;
+}
+
+section#part-entre-appareils div.content #chart-pie::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centre horizontalement et verticalement */
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    /* Fait du `::before` un cercle parfait */
+}
+
+/* ========== Section Mise en veille ========== */
+
+section#mise-en-veille {
+    background-color: #ea799e;
+}
+
+section#mise-en-veille div.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5vw;
+    width: 75%;
+    margin:auto;
+}
+
+section#mise-en-veille video {
+    height: 400px;
+}
+
+section#mise-en-veille div.text {
+    width: 400px;
+    text-align: start;
+}
+
+section#mise-en-veille div.text p {
+    margin-bottom: 3vh;
+}
+
+
+/* ========== Section Consommation selon les Choix de qualité ========== */
+
+section#consommation-choix-qualite {
+    background-color: #8d79ea;
+}
+
+section#consommation-choix-qualite video {
     height: 400px;
 }

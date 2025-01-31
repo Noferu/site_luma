@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUMA</title>
-    
+
     <!-- Importation de la police Montserrat depuis Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    
+
     <!-- Feuilles de style -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/imports.css" />
@@ -25,7 +25,8 @@
   <body>
     <header>
       <p class="header-title">
-        <strong>L</strong>igue pour une <strong>U</strong>tilisation <strong>M</strong>odérée et <strong>A</strong>ccessible
+        <strong>L</strong>igue pour une <strong>U</strong>tilisation
+        <strong>M</strong>odérée et <strong>A</strong>ccessible
       </p>
     </header>
 
@@ -33,7 +34,7 @@
       <!-- Section Vidéo d'Introduction -->
       <section id="intro">
         <h1 class="section-title">DÉCOUVRE <strong>LUMA</strong></h1>
-        
+
         <!-- Bouton stylisé pour jouer la vidéo -->
         <div class="video-button">
           <div class="upper"></div>
@@ -41,13 +42,13 @@
           <div class="bottom"></div>
           <div class="content">&nbsp;▶</div>
         </div>
-        
+
         <!-- Vidéo d’introduction, cachée par défaut -->
         <video class="intro-video" controls hidden>
           <source src="assets/videos/intro.mp4" type="video/mp4" />
           Votre navigateur ne supporte pas la vidéo.
         </video>
-        
+
         <!-- Indicateur de défilement -->
         <a href="#section-contexte-title" class="scroll-indicator-container">
           <img
@@ -61,7 +62,11 @@
       <!-- Section Contexte -->
       <section id="contexte" class="with-wave">
         <!-- Élément SVG pour la vague décorative -->
-        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          class="wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
           <path
             fill="#d6ea79"
             fill-opacity="1"
@@ -69,45 +74,220 @@
           ></path>
         </svg>
 
-        <h2 class="section-title" id="section-contexte-title">Ce qu'il faut savoir</h2>
+        <img src="assets/svgs/arrow.svg" class="arrow left-arrow" alt="Flèche gauche">
+
+        <h2 class="section-title" id="section-contexte-title">
+          Ce qu'il faut savoir
+        </h2>
         <div class="content">
           <p>
             Avant de commencer, tu dois en savoir plus sur l’énergie et les
             <strong>WATTS</strong>. Le <strong>WATT</strong> (W) est l’unité de
             mesure de la puissance électrique. Il indique la quantité d’énergie
-            nécessaire pour faire fonctionner un appareil électrique.
+            nécessaire au fonctionnement d’un appareil électrique.
           </p>
-          
+
           <!-- Vidéo de présentation -->
           <video autoplay loop muted playsinline>
             <source src="/assets/videos/luma_waving.mp4" type="video/mp4" />
             Your browser does not support the WebM format.
           </video>
-          
+
           <p>
             Plus un appareil consomme de watts, plus il utilise d’énergie, ce
-            qui entraîne une consommation d’électricité et donc une
-            <strong>empreinte carbone</strong> plus élevée.
+            qui entraîne une consommation d’électricité plus importante et donc
+            une <strong>empreinte carbone</strong> accrue.
           </p>
         </div>
         <svg></svg>
       </section>
 
-      <!-- Section Graphique -->
-      <section id="graphique" class="with-wave">
+      <!-- Section Part entre appareils -->
+      <section id="part-entre-appareils" class="with-wave">
         <img class="pattern" src="/assets/svgs/pattern_2.svg" alt="Pattern" />
-        
+
         <!-- Vague décorative -->
-        <svg class="wave section-graphique" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          class="wave section-graphique"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
           <path
             fill="#e5e5e5"
             fill-opacity="1"
             d="M0,256L48,224C96,192,192,128,288,133.3C384,139,480,213,576,250.7C672,288,768,288,864,240C960,192,1056,96,1152,69.3C1248,43,1344,85,1392,106.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
-        
-        <h2 class="section-title">Impact énergétique</h2>
-        
+
+        <img src="assets/svgs/arrow.svg" class="arrow right-arrow" alt="Flèche droite">
+
+        <h2 class="section-title">Qui consomme le plus d’énergie ?</h2>
+
+        <div class="content">
+          <video autoplay loop muted playsinline>
+            <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
+            Your browser does not support the WebM format.
+          </video>
+          <div id="chart-pie"></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non
+            purus ac sem posuere luctus eleifend at odio. Maecenas sit amet leo
+            a libero euismod faucibus. Cras sit amet molestie metus, non
+            facilisis est. In venenatis nisl vitae nibh facilisis, at convallis
+            ante venenatis. Maecenas in egestas sem.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section Mise en veille -->
+      <section id="mise-en-veille" class="with-wave">
+        <!-- Vague décorative -->
+        <svg
+          class="wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#ea799e"
+            fill-opacity="1"
+            d="M0,320L48,293.3C96,267,192,213,288,192C384,171,480,181,576,186.7C672,192,768,192,864,197.3C960,203,1056,213,1152,213.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+
+        <img src="assets/svgs/arrow.svg" class="arrow left-arrow" alt="Flèche gauche">
+
+        <h2 class="section-title">
+          Quand tes appareils prennent une pause… mais pas l’énergie
+        </h2>
+
+        <!-- Vidéo expliquant l’impact énergétique -->
+        <div class="content">
+          <div class="text">
+            <p>
+              Quand tu mets tes appareils en veille, ils ne sont pas totalement
+              <strong>éteints</strong>. Ils continuent à consommer de l’énergie. C’est un peu
+              comme si ton cerveau restait en alerte toute la nuit.
+            </p>
+            <p>
+              Quand tu éteins complètement un appareil, il <strong>arrête</strong> de consommer
+              de l’électricité inutilement. C’est comme un bon gros dodo bien
+              réparateur.
+            </p>
+            <p>
+              <strong>Résultat ?</strong> Moins de gaspillage d’énergie, une facture
+              d’électricité plus légère, et un meilleur impact écologique.
+            </p>
+          </div>
+          <video autoplay loop muted playsinline>
+            <source src="/assets/videos/luma_sleeping.mp4" type="video/mp4" />
+            Your browser does not support the WebM format.
+          </video>
+        </div>
+      </section>
+
+      <!-- Section Consommation Choix Qualité -->
+      <section id="consommation-choix-qualite" class="with-wave">
+        <!-- Vague décorative -->
+        <svg
+          class="wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#8d79ea"
+            fill-opacity="1"
+            d="M0,160L48,154.7C96,149,192,139,288,122.7C384,107,480,85,576,117.3C672,149,768,235,864,261.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+
+        <img src="assets/svgs/arrow.svg" class="arrow right-arrow" alt="Flèche droite">
+
+        <h2 class="section-title">Ta consommation selon tes choix</h2>
+
+        <!-- Vidéo expliquant l’impact énergétique -->
+        <video autoplay loop muted playsinline>
+          <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
+          Your browser does not support the WebM format.
+        </video>
+      </section>
+
+      <!-- Section Temps passé en ligne -->
+      <section id="consommation-choix" class="with-wave">
+        <!-- Vague décorative -->
+        <svg
+          class="wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#8d79ea"
+            fill-opacity="1"
+            d="M0,160L48,154.7C96,149,192,139,288,122.7C384,107,480,85,576,117.3C672,149,768,235,864,261.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+
+        <img src="assets/svgs/arrow.svg" class="arrow left-arrow" alt="Flèche gauche">
+
+        <h2 class="section-title">
+          La consommation énergétique à travers le temps.
+        </h2>
+
+        <!-- Vidéo expliquant l’impact énergétique -->
+        <video autoplay loop muted playsinline>
+          <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
+          Your browser does not support the WebM format.
+        </video>
+      </section>
+
+      <!-- Section Actions des entreprises -->
+      <section id="consommation-choix" class="with-wave">
+        <!-- Vague décorative -->
+        <svg
+          class="wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#8d79ea"
+            fill-opacity="1"
+            d="M0,160L48,154.7C96,149,192,139,288,122.7C384,107,480,85,576,117.3C672,149,768,235,864,261.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+
+        <img src="assets/svgs/arrow.svg" class="arrow right-arrow" alt="Flèche droite">
+
+        <h2 class="section-title">
+          Des entreprises qui innovent pour un numérique plus vert !
+        </h2>
+
+        <!-- Vidéo expliquant l’impact énergétique -->
+        <video autoplay loop muted playsinline>
+          <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
+          Your browser does not support the WebM format.
+        </video>
+      </section>
+
+      <!-- Section Coonclusion -->
+      <section id="consommation-choix" class="with-wave">
+        <!-- Vague décorative -->
+        <svg
+          class="wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#8d79ea"
+            fill-opacity="1"
+            d="M0,160L48,154.7C96,149,192,139,288,122.7C384,107,480,85,576,117.3C672,149,768,235,864,261.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+
+        <img src="assets/svgs/arrow.svg" class="arrow left-arrow" alt="Flèche gauche">
+
+        <h2 class="section-title">
+          Comment réduire son impact avec des gestes simples ?
+        </h2>
+
         <!-- Vidéo expliquant l’impact énergétique -->
         <video autoplay loop muted playsinline>
           <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
