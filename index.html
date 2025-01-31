@@ -1,52 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luma</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMA</title>
+    
+    <!-- Importation de la police Montserrat depuis Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/imports.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icône du site -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+
+    <!-- Script principal -->
     <script defer src="script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <p class="header-title">
+        <strong>L</strong>igue pour une <strong>U</strong>tilisation <strong>M</strong>odérée et <strong>A</strong>ccessible
+      </p>
+    </header>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="#intro">Introduction</a></li>            
-            <li><a href="#contexte">Contexte</a></li>
-            {# ... #}
-            <li><a href="#gestes">Gestes Simples</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section id="intro">
-        <h1>Bienvenue sur Sobriété Numérique</h1>
-        <p>Luma vous guide pour réduire l’impact énergétique de vos loisirs numériques.</p>
-        <video autoplay muted loop>
-            <source src="assets/videos/intro.mp4" type="video/mp4">
+    <main>
+      <!-- Section Vidéo d'Introduction -->
+      <section id="intro">
+        <h1 class="section-title">DÉCOUVRE <strong>LUMA</strong></h1>
+        
+        <!-- Bouton stylisé pour jouer la vidéo -->
+        <div class="video-button">
+          <div class="upper"></div>
+          <div class="mid"></div>
+          <div class="bottom"></div>
+          <div class="content">&nbsp;▶</div>
+        </div>
+        
+        <!-- Vidéo d’introduction, cachée par défaut -->
+        <video class="intro-video" controls hidden>
+          <source src="assets/videos/intro.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo.
         </video>
-    </section>
+        
+        <!-- Indicateur de défilement -->
+        <a href="#section-contexte-title" class="scroll-indicator-container">
+          <img
+            class="scroll-indicator"
+            src="/assets/svgs/scroll_indicator.svg"
+            alt="Pattern"
+          />
+        </a>
+      </section>
 
-    <section id="contexte">
-        <h2>Comprendre l'impact</h2>
-        <canvas id="energyChart"></canvas>
-    </section>
+      <!-- Section Contexte -->
+      <section id="contexte" class="with-wave">
+        <!-- Élément SVG pour la vague décorative -->
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#d6ea79"
+            fill-opacity="1"
+            d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
 
-    {# ... #}
+        <h2 class="section-title" id="section-contexte-title">Ce qu'il faut savoir</h2>
+        <div class="content">
+          <p>
+            Avant de commencer, tu dois en savoir plus sur l’énergie et les
+            <strong>WATTS</strong>. Le <strong>WATT</strong> (W) est l’unité de
+            mesure de la puissance électrique. Il indique la quantité d’énergie
+            nécessaire pour faire fonctionner un appareil électrique.
+          </p>
+          
+          <!-- Vidéo de présentation -->
+          <video autoplay loop muted playsinline>
+            <source src="/assets/videos/luma_waving.mp4" type="video/mp4" />
+            Your browser does not support the WebM format.
+          </video>
+          
+          <p>
+            Plus un appareil consomme de watts, plus il utilise d’énergie, ce
+            qui entraîne une consommation d’électricité et donc une
+            <strong>empreinte carbone</strong> plus élevée.
+          </p>
+        </div>
+        <svg></svg>
+      </section>
 
-</main>
+      <!-- Section Graphique -->
+      <section id="graphique" class="with-wave">
+        <img class="pattern" src="/assets/svgs/pattern_2.svg" alt="Pattern" />
+        
+        <!-- Vague décorative -->
+        <svg class="wave section-graphique" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#e5e5e5"
+            fill-opacity="1"
+            d="M0,256L48,224C96,192,192,128,288,133.3C384,139,480,213,576,250.7C672,288,768,288,864,240C960,192,1056,96,1152,69.3C1248,43,1344,85,1392,106.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+        
+        <h2 class="section-title">Impact énergétique</h2>
+        
+        <!-- Vidéo expliquant l’impact énergétique -->
+        <video autoplay loop muted playsinline>
+          <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
+          Your browser does not support the WebM format.
+        </video>
+      </section>
+    </main>
 
-<footer>
-    <p>&copy; 2025 - Projet de la Ligue pour une Utilisation Modérée et Accessible | Sobriété Numérique</p>
-</footer>
+    <footer>
+      <p>
+        &copy; 2025 - Projet de la Ligue pour une Utilisation Modérée et
+        Accessible | Sobriété Numérique
+      </p>
+    </footer>
 
-{# Bibliothèques externes  #}
-<script src="libs/chart.min.js"></script>
-<script src="libs/gsap.min.js"></script>
-<script src="libs/lottie.min.js"></script>
-
-</body>
+    <!-- Bibliothèques externes -->
+    <script src="libs/chart.min.js"></script>
+    <script src="libs/gsap.min.js"></script>
+    <script src="libs/lottie.min.js"></script>
+  </body>
 </html>
