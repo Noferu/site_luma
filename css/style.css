@@ -1,3 +1,15 @@
+/* ========== Variables Globales ========== */
+:root {
+    --white: #f8e2d8;
+    --pink-main: #fc638d;
+    --sweet-orange: #fc8563;
+    --pink-hover: #da0000;
+    --pink-light: #f8c2c4;
+    --purple-main: #8d79ea;
+    --yellow-main: #ffe978;
+    --luma-green: #79eac5;
+}
+
 /* ========== Général ========== */
 
 html {
@@ -6,8 +18,8 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: white;
-    background-color: #ea799e;
+    color: var(--white);
+    background-color: var(--pink-main);
     text-align: center;
 }
 
@@ -21,22 +33,14 @@ main {
 
 header {
     width: 100%;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
     font-size: 1.2rem;
+    padding-top: 5vh;
+    padding-bottom: 35vh;
 }
 
-header .header-title {
+header .header-tagline {
     font-weight: 600;
     font-style: italic;
-}
-
-header .header-title strong {
-    font-weight: 800;
-}
-
-header .header-title:hover strong {
-    text-decoration: underline;
 }
 
 /* ========== Titres ========== */
@@ -64,7 +68,7 @@ h1 strong {
 
 h1:hover strong {
     letter-spacing: 0.5rem;
-    color: #79eac5;
+    color: var(--green-highlight);
     transform: scale(1.2);
 }
 
@@ -79,18 +83,9 @@ h2 {
     width: 70%;
 }
 
-/* ========== Section Introductive ========== */
+/* ========== Bouton Vidéo ========== */
 
-section#intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ========== Bouton vidéo ========== */
-
-.video-button {
+.presentation-play-trigger {
     position: relative;
     width: 150px;
     height: 150px;
@@ -101,7 +96,7 @@ section#intro {
     align-items: center;
 }
 
-.video-button .upper {
+.presentation-play-trigger .upper {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -112,16 +107,16 @@ section#intro {
     transition: transform 100ms ease-in-out, background-color 300ms ease-in-out;
 }
 
-.video-button:hover .upper {
+.presentation-play-trigger:hover .upper {
     transform: translateY(1.5%);
 }
 
-.video-button:active .upper {
-    background-color: #da0000;
+.presentation-play-trigger:active .upper {
+    background-color: var(--pink-hover);
     transform: translateY(3.5%);
 }
 
-.video-button .mid {
+.presentation-play-trigger .mid {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -133,26 +128,21 @@ section#intro {
     transition: opacity 300ms ease-in-out;
 }
 
-.video-button:active .mid {
-    opacity: 0;
-    transition: opacity 10ms ease-in-out;
-}
-
-.video-button .bottom {
+.presentation-play-trigger .bottom {
     position: absolute;
     width: 107%;
     height: 107%;
-    background-color: #f8c2c4;
+    background-color: var(--pink-light);
     border-radius: 50%;
     z-index: 0;
     top: 2%;
     left: -3.5%;
 }
 
-.video-button .content {
+.presentation-play-trigger .content {
     position: relative;
     font-size: 400%;
-    color: #ffffff;
+    color: var(--white);
     z-index: 3;
     transform: translateY(-1%);
     text-shadow: 1px -2px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
@@ -160,49 +150,177 @@ section#intro {
     user-select: none;
 }
 
-.video-button:hover .content {
-    transform: translateY(2%);
-}
-
-.video-button:active .content {
-    color: #cccccc;
+.presentation-play-trigger:hover .content {
     transform: translateY(4%);
 }
 
-/* ========== Indicateur de défilement ========== */
+.presentation-play-trigger:active .content {
+    transform: translateY(6%);
+}
 
-.scroll-indicator {
+/* ========== Vidéo ========== */
+
+.video-wrapper {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70vw;
+    max-width: 900px;
+    opacity: 0;
+    z-index: 4;
+    pointer-events: none;
+    transition: 1s ease-out;
+}
+
+.video-wrapper.show {
+    top: 22vh;
+    opacity: 1;
+    pointer-events: auto;
+    transition: 1s ease-out;
+}
+
+.video-wrapper video {
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: auto;
+    border: solid 8px var(--sweet-orange);
+    border-radius: 16px;
+}
+
+.video-wrapper button {
+    position: absolute;
+    cursor:pointer;
+    opacity: 0;
+    top:0;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 5px;
+    background-color: #ff0000;
+    border-radius: 100px;
+    border:none;
+    width: 40px;
+    height: 40px;
+    font-size: 140%;
+    color:var(--white);
+    transition: 1s ease-in-out;
+}
+
+.video-wrapper button:hover {
+    transform: rotateZ(90deg);
+}
+
+.video-wrapper:hover button {
+    opacity: 1;
+    top:5vh;
+}
+
+/* ========== Indicateur de Défilement ========== */
+
+.scroller img {
     margin-top: 16vh;
     height: auto;
     width: 4vw;
     transition: transform 500ms ease-in-out;
+    cursor: pointer;
 }
 
-.scroll-indicator:hover {
+.scroller:hover img {
     transform: translateY(10%);
 }
 
-/* ========== Sections générales ========== */
+/* ========== Accordéon ========== */
 
-section div.content p strong {
-    font-weight: bold;
-    font-size: 110%;
+.accordion {
+    width: 50vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-section.with-wave {
+.accordion-item {
+    border-bottom: 2px solid var(--white);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px 15px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: white;
+    padding: 0 15px;
+}
+
+.accordion-content p {
+    margin: 10px 0;
+}
+
+input[type="radio"]:checked+.accordion-header+.accordion-content {
+    max-height: 100px;
+}
+
+input[type="radio"]:checked+.accordion-header {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ========== Règles Générales de Sections ========== */
+
+section {
     position: relative;
     padding-bottom: 50vh;
 }
 
-section.with-wave svg.wave {
+section div.content,
+div.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+    margin: auto;
+}
+
+section p {
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+}
+
+section video {
+    height: 400px;
+}
+
+section p strong {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+section svg {
     position: absolute;
     bottom: 99.9%;
     left: 0;
     width: 100%;
     height: auto;
+    pointer-events: none;
 }
 
-section.with-wave .arrow {
+.arrow-left,
+.arrow-right {
     position: absolute;
     width: 100px;
     height: auto;
@@ -211,12 +329,12 @@ section.with-wave .arrow {
     z-index: 3;
 }
 
-section.with-wave .left-arrow {
+.arrow-left {
     left: 8%;
     animation: wobble-ver-left 3s ease-in-out infinite;
 }
 
-section.with-wave .right-arrow {
+.arrow-right {
     left: 85%;
     transform: scaleX(-1);
     animation: wobble-ver-right 3s ease-in-out infinite;
@@ -226,173 +344,256 @@ section.with-wave .right-arrow {
     0% {
         transform: translateY(0) rotate(0) scaleX(-1);
     }
+
     9% {
-        transform: translateY(-30px) rotate(-6deg) scaleX(-1); 
+        transform: translateY(-30px) rotate(-6deg) scaleX(-1);
     }
+
     18% {
-        transform: translateY(15px) rotate(6deg) scaleX(-1); 
+        transform: translateY(15px) rotate(6deg) scaleX(-1);
     }
+
     28% {
-        transform: translateY(-15px) rotate(-3.6deg) scaleX(-1); 
+        transform: translateY(-15px) rotate(-3.6deg) scaleX(-1);
     }
+
     37% {
-        transform: translateY(9px) rotate(2.4deg) scaleX(-1); 
+        transform: translateY(9px) rotate(2.4deg) scaleX(-1);
     }
+
     50% {
-        transform: translateY(-6px) rotate(-1.2deg) scaleX(-1); 
+        transform: translateY(-6px) rotate(-1.2deg) scaleX(-1);
     }
-    50%, 100% {
+
+    50%,
+    100% {
         transform: translateY(0) rotate(0) scaleX(-1);
     }
 }
-
 
 @keyframes wobble-ver-left {
     0% {
         transform: translateY(0) rotate(0);
     }
+
     9% {
         transform: translateY(-30px) rotate(6deg);
     }
+
     18% {
         transform: translateY(15px) rotate(-6deg);
     }
+
     28% {
         transform: translateY(-15px) rotate(3.6deg);
     }
+
     37% {
         transform: translateY(9px) rotate(-2.4deg);
     }
+
     50% {
         transform: translateY(-6px) rotate(1.2deg);
     }
+
     50%,
     100% {
         transform: translateY(0) rotate(0);
     }
 }
 
+/* ========== Section "Context" ========== */
 
-/* ========== Section Contexte ========== */
-
-section#contexte {
-    background-color: #d6ea79;
-    margin-top: 50vh;
+section#context {
+    background-color: var(--sweet-orange);
+    padding-bottom: 0;
 }
 
-section#contexte div.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 60vw;
-    margin: auto;
-    font-size: 1.5rem;
+section div.content {
+    margin-bottom: 10vh;
 }
 
-section#contexte video {
-    height: 400px;
-}
-
-section#contexte div.content p {
-    color: black;
-}
-
-section#contexte div.content p:first-child {
+section#context div.content p:first-child {
     text-align: start;
 }
 
-section#contexte div.content p:last-child {
+section#context div.content p:last-child {
     text-align: end;
 }
 
-/* ========== Section La part entre les appareils ========== */
-
-section#part-entre-appareils {
-    background-color: #e5e5e5;
+section#context video {
+    margin-left: 2vw;
+    margin-right: 4vw;
 }
 
-section#part-entre-appareils * {
-    z-index: 2;
+/* ========== Section "Consumption Habits" ========== */
+
+section#consumption-habits {
+    background-color: var(--purple-main);
 }
 
-section#part-entre-appareils img.pattern {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 1;
+section#consumption-habits .arrow-right {
+    bottom: 125%;
 }
 
-section#part-entre-appareils div.content {
+section#consumption-habits .info {
     position: relative;
     display: flex;
     margin: auto;
     width: 70%;
 }
 
-section#part-entre-appareils div.content video {
+section#consumption-habits .info video {
     width: auto;
-    height: 400px;
 }
 
-section#part-entre-appareils div.content #chart-pie {
-    position: absolute;
-    height: 300px;
-    width: 300px;
-    background-color: black;
-    border-radius: 500px;
+/* ========== Section "Standby Impact" ========== */
+
+section#standby-impact {
+    background-color: var(--pink-main);
 }
 
-section#part-entre-appareils div.content #chart-pie::before {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Centre horizontalement et verticalement */
-    background-color: #e5e5e5;
-    border-radius: 50%;
-    /* Fait du `::before` un cercle parfait */
-}
-
-/* ========== Section Mise en veille ========== */
-
-section#mise-en-veille {
-    background-color: #ea799e;
-}
-
-section#mise-en-veille div.content {
+section#standby-impact div.content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:5vw;
+    gap: 10vw;
     width: 75%;
-    margin:auto;
+    margin: auto;
 }
 
-section#mise-en-veille video {
-    height: 400px;
-}
-
-section#mise-en-veille div.text {
+section#standby-impact div.description {
     width: 400px;
     text-align: start;
 }
 
-section#mise-en-veille div.text p {
-    margin-bottom: 3vh;
+section#standby-impact .rich-content {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    position: relative;
 }
 
-
-/* ========== Section Consommation selon les Choix de qualité ========== */
-
-section#consommation-choix-qualite {
-    background-color: #8d79ea;
+section#standby-impact .rich-content .img-bg {
+    position: absolute;
+    background-color: #0000005e;
+    border-radius: 100%;
+    height: 300px;
+    width: 368px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-section#consommation-choix-qualite video {
-    height: 400px;
+section#standby-impact .rich-content .img-bg:first-child {
+    top: -33%;
+    left: -33%;
+}
+
+section#standby-impact .rich-content .img-bg:last-child {
+    bottom: -33%;
+    right: -33%;
+}
+
+section#standby-impact .rich-content .img-bg img {
+    margin: auto;
+    width: 80%;
+    height: auto;
+}
+
+/* ========== Section "Quality Choices" ========== */
+
+section#quality-choices {
+    background-color: var(--yellow-main);
+    color: var(--sweet-orange);
+}
+
+section#quality-choices .arrow-right {
+    bottom: 117%;
+}
+
+section#quality-choices div.content {
+    width: 80vw;
+    gap: 5vw;
+}
+
+section#quality-choices img {
+    height: 200px;
+    width: auto;
+}
+
+section#quality-choices img:last-child {
+    height: 150px;
+}
+
+section#quality-choices div.text {
+    width: 80vw;
+    gap: 10vw;
+}
+
+section#quality-choices p:first-child {
+    text-align: start;
+}
+
+section#quality-choices p:last-child {
+    text-align: end;
+}
+
+/* ========== Section "Tech Purchase" ========== */
+
+section#tech-purchase {
+    background-color: var(--sweet-orange);
+    color: var(--white);
+}
+
+section#tech-purchase p {
+    position: relative;
+    margin: auto;
+    margin-bottom: 10vh;
+    width: 50vw;
+}
+
+section#tech-purchase>img {
+    margin-bottom: 5vh;
+}
+
+section#tech-purchase p img {
+    position: absolute;
+    transform: scaleX(-100%) translateY(10%);
+    height: 100px;
+    width: auto;
+}
+
+/* ========== Section "Historical Consumption" ========== */
+
+section#historical-consumption {
+    color: var(--sweet-orange);
+    background-color: var(--white);
+}
+
+section#historical-consumption p {
+    text-align: start;
+}
+
+h2.subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--pink-main)
+}
+
+/* ========== Section "Green Innovation" ========== */
+
+section#green-innovation {
+    background-color: var(--purple-main);
+}
+
+/* ========== Section "Challenge Yourself" ========== */
+
+section#challenge-yourself {
+    background-color: var(--pink-main);
+}
+
+/* ========== Footer ========== */
+
+footer {
+    padding: 2vw;
 }
