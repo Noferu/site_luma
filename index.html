@@ -70,9 +70,9 @@
         <div class="content">
           <p>
             Avant de commencer, il est essentiel de comprendre l’énergie et les
-            <strong>WATTS</strong>. Le <strong>WATT</strong> (W) est l’unité qui
-            mesure la puissance électrique, soit la quantité d’énergie requise
-            pour faire fonctionner un appareil.
+            <strong>WATTS</strong>. Le WATT (W) est l’unité qui mesure la
+            puissance électrique, soit la quantité d’énergie requise pour faire
+            fonctionner un appareil.
           </p>
 
           <video autoplay loop muted>
@@ -83,7 +83,7 @@
           <p>
             Plus un appareil consomme de watts, plus il utilise d’énergie, ce
             qui entraîne une consommation d’électricité plus importante et donc
-            une <strong>empreinte carbone</strong> accrue.
+            <strong>une empreinte carbone</strong> accrue.
           </p>
         </div>
 
@@ -107,12 +107,18 @@
         <h2>Ta consommation en fonction de tes plaisirs</h2>
 
         <div class="content">
+          <img
+            src="assets/svgs/consumption-habits.svg"
+            alt="Graphique démontrant la part de consommation"
+          />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non
-            purus ac sem posuere luctus eleifend at odio. Maecenas sit amet leo
-            a libero euismod faucibus. Cras sit amet molestie metus, non
-            facilisis est. In venenatis nisl vitae nibh facilisis, at convallis
-            ante venenatis. Maecenas in egestas sem.
+            Limiter la consommation d’énergie de nos
+            <strong>loisirs numériques</strong> est essentiel. Réduire la
+            qualité du <strong>streaming</strong>, éteindre les appareils
+            inutilisés ou privilégier le mode
+            <strong>économie d’énergie</strong> sont des gestes simples. Ils
+            permettent de profiter du <strong>gaming</strong> et des vidéos tout
+            en réduisant notre empreinte carbone.
           </p>
         </div>
       </section>
@@ -121,6 +127,17 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#fc638d"
+            d="M0,288L48,256C96,224,192,160,288,138.7C384,117,480,139,576,122.7C672,107,768,53,864,32C960,11,1056,21,1152,42.7C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+
+        <svg
+          class="night-wave"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#131278"
             d="M0,288L48,256C96,224,192,160,288,138.7C384,117,480,139,576,122.7C672,107,768,53,864,32C960,11,1056,21,1152,42.7C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
@@ -136,43 +153,68 @@
         <div class="content">
           <div class="description">
             <p>
-              Mettre un appareil en veille ne signifie pas l’<strong
-                >éteindre</strong
-              >
-              complètement. Il continue à consommer de l’énergie, un peu comme
-              si ton cerveau restait en alerte toute la nuit.
+              Mettre un appareil en <strong>veille</strong> ne signifie pas
+              l’éteindre complètement. Il continue à
+              <strong>consommer de l’énergie</strong>, un peu comme si ton
+              cerveau restait en alerte toute la nuit.
             </p>
 
             <p>
-              Quand tu éteins complètement un appareil, il
-              <strong>arrête</strong> de consommer de l’électricité inutilement.
-              C’est comme un bon gros dodo bien réparateur.
+              Quand tu <strong>éteins</strong> complètement un appareil, il
+              arrête de consommer de l’électricité inutilement.
             </p>
 
             <p>
               <strong>Résultat ?</strong> Moins de gaspillage d’énergie, une
-              facture d’électricité plus légère, et un meilleur impact
-              écologique.
+              facture allégée, et un meilleur impact écologique.
             </p>
           </div>
 
           <div class="rich-content">
-            <div class="img-bg">
-              <img
-                src="/assets/svgs/standby-impact-turnedon.svg"
-                alt="Appareil en veille avec énergie consommée"
-              />
+            <!-- Conteneur des informations pour chaque état -->
+            <div class="infos">
+              <!-- État "ON" -->
+              <div class="state state-on">
+                <img
+                  src="/assets/svgs/standby-impact-turnedon.svg"
+                  alt="Appareil en veille avec énergie consommée"
+                />
+                <video autoplay loop muted>
+                  <source
+                    src="/assets/videos/luma_standby_on.mp4"
+                    type="video/mp4"
+                  />
+                  Votre navigateur ne supporte pas le format vidéo.
+                </video>
+              </div>
+
+              <!-- État "OFF" -->
+              <div class="state state-off">
+                <img
+                  src="/assets/svgs/standby-impact-turnedoff.svg"
+                  alt="Appareil complètement éteint sans énergie consommée"
+                />
+                <video autoplay loop muted>
+                  <source
+                    src="/assets/videos/luma_standby_off.mp4"
+                    type="video/mp4"
+                  />
+                  Votre navigateur ne supporte pas le format vidéo.
+                </video>
+              </div>
             </div>
 
-            <video autoplay loop muted>
-              <source src="assets/videos/luma_sleeping.mp4" type="video/mp4" />
-              Votre navigateur ne supporte pas le format vidéo.
-            </video>
-
-            <div class="img-bg">
+            <!-- Interrupteur pour basculer entre les états -->
+            <div class="switch" onclick="toggleSwitch()">
               <img
-                src="/assets/svgs/standby-impact-turnedoff.svg"
-                alt="Appareil complètement éteint sans énergie consommée"
+                class="switch-off"
+                src="/assets/svgs/switch_off.svg"
+                alt="Interrupteur éteint"
+              />
+              <img
+                class="switch-on"
+                src="/assets/svgs/switch_on.svg"
+                alt="Interrupteur allumé"
               />
             </div>
           </div>
@@ -198,32 +240,29 @@
         <h2>Ta consommation selon tes choix</h2>
 
         <div class="content">
-          <img
-            src="/assets/svgs/resolution-consumption.svg"
-            alt="Graphique illustrant la consommation d'énergie selon la résolution vidéo"
-          />
-
           <video autoplay loop muted>
             <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
             Your browser does not support the WebM format.
           </video>
 
           <img
-            src="/assets/svgs/network-consumption.svg"
-            alt="Graphique montrant la consommation d'énergie selon le type de réseau"
+            src="/assets/svgs/resolution-consumption.svg"
+            alt="Graphique illustrant la consommation d'énergie selon la résolution vidéo"
           />
         </div>
 
         <div class="text">
           <p>
             As-tu remarqué la différence de consommation ? Lorsque tu es dans le
-            train, ton petit écran n’a pas besoin d’une qualité aussi élevée. En
-            plus, cela garantit <strong>aucun problème</strong> de chargement !
+            train, ton petit écran n’a pas besoin d’une
+            <strong>qualité aussi élevée</strong>, et cela garantit
+            <strong>aucun problème</strong> de chargement, même pour une
+            utilisation d'une heure quotidiennement.
           </p>
           <p>
             Et quand tu en as l’occasion, privilégie le <strong>Wi-Fi</strong> !
             Cela t’évitera de gaspiller ton forfait tout en
-            <strong>limitant ta consommation énergétique</strong>.
+            <strong>limitant</strong> ta consommation énergétique.
           </p>
         </div>
       </section>
@@ -247,8 +286,7 @@
         <p>
           Aujourd’hui, la course à la dernière technologie est omniprésente.
           Pourtant, changer fréquemment d’appareil n’est pas toujours nécessaire
-          et représente un
-          <strong>coût</strong> non négligeable.
+          et représente un coût non négligeable.
         </p>
 
         <img
@@ -257,7 +295,8 @@
         />
 
         <p>
-          Mais tu peux agir pour ca ! Et de différentes manières selon
+          Mais tu peux agir en optant pour des alternatives plus durables, et de
+          différentes manières selon
           <strong>tes envies</strong>.
 
           <img
@@ -269,31 +308,15 @@
 
         <div class="accordion">
           <div class="accordion-item">
-            <input type="radio" id="accordion-1" name="accordion" hidden />
-            <label class="accordion-header" for="accordion-1">
-              Bon impact !
+            <input type="radio" id="accordion-4" name="accordion" hidden />
+            <label class="accordion-header" for="accordion-4">
+              Alors là, c'est génial si tu fais ça !
               <span class="arrow"></span>
             </label>
             <div class="accordion-content">
               <p>
-                Baisse la luminosité de tes écrans ou active le mode sombre. Ces
-                petites actions réduisent la consommation d'énergie et protègent
-                tes yeux.
-              </p>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <input type="radio" id="accordion-2" name="accordion" hidden />
-            <label class="accordion-header" for="accordion-2">
-              Très bon impact !
-              <span class="arrow"></span>
-            </label>
-            <div class="accordion-content">
-              <p>
-                Préfère des appareils basse consommation, comme un ordinateur
-                portable récent, qui est souvent plus efficace qu'une ancienne
-                tour.
+                Réfléchir avant d'acheter pour déterminer si un nouvel appareil
+                est réellement nécessaire, et éviter les achats impulsifs.
               </p>
             </div>
           </div>
@@ -306,23 +329,36 @@
             </label>
             <div class="accordion-content">
               <p>
-                Programme l'arrêt automatique de tes appareils après une période
-                d'inactivité, ou utilise des prises intelligentes pour couper
-                l'alimentation inutilisée.
+                Opter pour des appareils d'occasion sur des plateformes comme
+                Leboncoin pour leur donner une seconde vie.
               </p>
             </div>
           </div>
 
           <div class="accordion-item">
-            <input type="radio" id="accordion-4" name="accordion" hidden />
-            <label class="accordion-header" for="accordion-4">
-              Alors là, c'est génial si tu fais ça !
+            <input type="radio" id="accordion-2" name="accordion" hidden />
+            <label class="accordion-header" for="accordion-2">
+              Très bon impact !
               <span class="arrow"></span>
             </label>
             <div class="accordion-content">
               <p>
-                Souscris à un fournisseur d'énergie renouvelable pour alimenter
-                tes appareils. Cela soutient une transition écologique durable.
+                Acheter des appareils reconditionnés pour réduire l'impact
+                environnemental lié à la fabrication.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input type="radio" id="accordion-1" name="accordion" hidden />
+            <label class="accordion-header" for="accordion-1">
+              Bon impact !
+              <span class="arrow"></span>
+            </label>
+            <div class="accordion-content">
+              <p>
+                Recycler ton ancien téléphone en le donnant au vendeur lorsque
+                tu en achètes un neuf.
               </p>
             </div>
           </div>
@@ -340,9 +376,9 @@
         <h2>Notre consommation à travers le temps</h2>
         <div class="content">
           <p>
-            De nos jours, c’est la course d’être à la pointe de la technologie
-            pour beaucoup de monde. En plus de ne pas être forcément nécessaire,
-            ton nouveau téléphone par exemple à un <strong>coût</strong>.
+            La consommation énergétique des loisirs numériques ne cesse
+            d’augmenter. Être à la pointe de la technologie a un coût écologique
+            important. Changer cela commence par des gestes simples.
           </p>
 
           <img
@@ -354,34 +390,6 @@
           Évolution de la consommation énergétique numérique mondiale
           (2010-2025)
         </h2>
-      </section>
-
-      <section id="green-innovation">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#8d79ea"
-            d="M0,64L48,64C96,64,192,64,288,64C384,64,480,64,576,101.3C672,139,768,213,864,245.3C960,277,1056,267,1152,240C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-
-        <h2>Des innovations pour un numérique plus écologique !</h2>
-
-        <div class="content">
-          <img src="" alt="" />
-          <div class="text">
-            <p>
-              La technologie évolue et les entreprises s’adaptent ! Certaines
-              investissent dans des solutions plus écologiques, comme des
-              systèmes de refroidissement innovants pour leurs
-              <strong>data centers</strong>.
-            </p>
-            <p>
-              Tu vois c’est simple, tu peux continuer à te faire autant plaisir
-              que tu le souhaites, mais juste en choisissant sur quelle
-              plateforme, tu peux changer les choses !
-            </p>
-          </div>
-        </div>
       </section>
 
       <section id="challenge-yourself">
@@ -402,20 +410,6 @@
         Accessible | Sobriété Numérique
       </p>
     </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const wrapper = document.querySelector(".video-wrapper");
-        const trigger = document.querySelector(".presentation-play-trigger");
-
-        document.body.addEventListener("click", (e) => {
-          if (
-            e.target.closest(".presentation-play-trigger") ||
-            e.target.classList.contains("close-video")
-          ) {
-            wrapper.classList.toggle("show");
-          }
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
