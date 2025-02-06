@@ -1,6 +1,6 @@
 /* ========== Variables Globales ========== */
 :root {
-    --white: #f8e2d8;
+    --beige: #f8e2d8;
     --pink-main: #fc638d;
     --sweet-orange: #fc8563;
     --pink-hover: #da0000;
@@ -18,7 +18,7 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: var(--white);
+    color: var(--beige);
     background-color: var(--pink-main);
     text-align: center;
 }
@@ -142,7 +142,7 @@ h2 {
 .presentation-play-trigger .content {
     position: relative;
     font-size: 400%;
-    color: var(--white);
+    color: var(--beige);
     z-index: 3;
     transform: translateY(-1%);
     text-shadow: 1px -2px 0 rgba(0, 0, 0, 0.25), 1px -1px 0 rgba(0, 0, 0, 0.25);
@@ -185,7 +185,7 @@ h2 {
     left: 0;
     width: 100%;
     height: auto;
-    border: solid 8px var(--sweet-orange);
+    border: solid 8px var(--beige);
     border-radius: 16px;
 }
 
@@ -201,7 +201,7 @@ h2 {
     width: 40px;
     height: 40px;
     font-size: 140%;
-    color: var(--white);
+    color: var(--beige);
     transition: 1s ease-in-out;
 }
 
@@ -239,7 +239,7 @@ h2 {
 }
 
 .accordion-item {
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--beige);
 }
 
 .accordion-header {
@@ -470,7 +470,8 @@ section#consumption-habits .content img {
 
 /* ----- Général ----- */
 section#standby-impact {
-    background-color: var(--pink-main);
+    background-color: var(--beige);
+    color: var(--pink-main)
 }
 
 section#standby-impact div.content {
@@ -498,14 +499,14 @@ section#standby-impact .state {
     flex-direction: column;
 }
 
-section#standby-impact .state img {
+section#standby-impact .state video.animated-chart {
     height: 200px;
     max-width: 300px;
     width: auto;
     transform: translateY(25%);
 }
 
-section#standby-impact .state video {
+section#standby-impact .state video.animated-luma {
     height: 300px;
     width: auto;
     margin-bottom: 8vh;
@@ -522,11 +523,19 @@ section#standby-impact .rich-content .switch img {
     width: auto;
     -webkit-user-drag: none;
     user-select: none;
-    pointer-events: auto; 
+    pointer-events: auto;
 }
 
 /* ----- Statut "ON" ----- */
 section#standby-impact svg.night-wave {
+    opacity: 0;
+}
+
+section#standby-impact .arrow-left.day {
+    opacity: 1;
+}
+
+section#standby-impact .arrow-left.night {
     opacity: 0;
 }
 
@@ -541,10 +550,19 @@ section#standby-impact .rich-content .switch img.switch-off {
 /* ----- Statut "OFF" ----- */
 section#standby-impact.off {
     background-color: #131278;
+    color: var(--beige);
 }
 
 section#standby-impact.off svg.night-wave {
     opacity: 1;
+}
+
+section#standby-impact.off .arrow-left.night {
+    opacity: 1;
+}
+
+section#standby-impact.off .arrow-left.day {
+    opacity: 0;
 }
 
 section#standby-impact.off .state-on {
@@ -581,7 +599,7 @@ section#quality-choices div.content {
     gap: 3vw;
 }
 
-section#quality-choices img {
+section#quality-choices .animated-chart {
     padding-top: 5vh;
     height: 300px;
     width: auto;
@@ -604,24 +622,23 @@ section#quality-choices p:last-child {
 
 section#tech-purchase {
     background-color: var(--sweet-orange);
-    color: var(--white);
+    color: var(--beige);
 }
 
 section#tech-purchase p:not(.accordion p) {
     position: relative;
     margin: auto;
-    margin-bottom: 10vh;
+    margin-bottom: 7vh;
     width: 50vw;
 }
 
-section#tech-purchase>img {
+section#tech-purchase > video {
     margin-bottom: 5vh;
 }
-
 section#tech-purchase p img {
     position: absolute;
     transform: scaleX(-100%) translateY(10%);
-    height: 100px;
+    height: 5vw;
     width: auto;
 }
 
@@ -629,7 +646,7 @@ section#tech-purchase p img {
 
 section#historical-consumption {
     color: var(--sweet-orange);
-    background-color: var(--white);
+    background-color: #f6e0d6;
 }
 
 section#historical-consumption p {
@@ -646,22 +663,22 @@ h2.subtitle {
 
 section#challenge-yourself {
     background-color: var(--pink-main);
+    width: 100%;
 }
 
 .interactive-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8vw;
+    gap: 5vw;
 }
 
-.interactive-text {
-    width: 400px;
-    height: 300px;
+.interactive-content p {
+    max-width: 500px;
 }
 
-.interactive-text strong {
-    font-size: 200%;
+.interactive-content #tower-container {
+    padding-left: 10vw;
 }
 
 #tower {
@@ -672,7 +689,7 @@ section#challenge-yourself {
     justify-content: end;
     align-items: end;
     width: 300px;
-    height: 960px;
+    height: 720px;
     overflow: hidden;
 }
 
@@ -683,12 +700,11 @@ section#challenge-yourself {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/assets/images/building-wall.png");
+    background-image: url("/assets/svgs/building-blocks/building-wall.svg");
     background-size: cover;
     background-position: center;
     opacity: 0.5;
 }
-
 
 .stone {
     width: 100%;
@@ -713,6 +729,46 @@ section#challenge-yourself {
 
 .stone.removed {
     animation: fall 0.5s forwards ease-out;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.action-emoji {
+    font-size: 4rem;
+    margin-top: 1rem;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    pointer-events: none;
+    user-select: none;
+    animation: breathing 3s ease-out infinite normal;
+}
+
+.action-emoji:hover {
+    transform: scale(1.2);
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+
+    40% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    60% {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
 }
 
 @keyframes fall {

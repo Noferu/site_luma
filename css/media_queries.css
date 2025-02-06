@@ -1,0 +1,78 @@
+/* ========== TABLETTES & PETITS ÉCRANS (768px max) ========== */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .presentation-play-trigger {
+        width: 120px;
+        height: 120px;
+    }
+
+    section div.content,
+    div.text {
+        flex-direction: column;
+        width: 85vw;
+        text-align: center;
+    }
+
+    section video,
+    section img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .scroller img {
+        width: 7vw;
+    }
+
+    .arrow-left, .arrow-right {
+        width: 70px;
+    }
+
+    .accordion {
+        width: 85vw;
+    }
+}
+
+/* ========== SMARTPHONES (480px max) ========== */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .presentation-play-trigger {
+        width: 100px;
+        height: 100px;
+    }
+
+    .video-wrapper {
+        width: 90vw;
+    }
+
+    section div.content,
+    div.text {
+        width: 95vw;
+    }
+
+    .scroller img {
+        width: 9vw;
+    }
+
+    .arrow-left, .arrow-right {
+        width: 50px;
+    }
+}

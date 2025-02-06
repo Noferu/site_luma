@@ -1,13 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".video-wrapper");
   const trigger = document.querySelector(".presentation-play-trigger");
+  const video = document.querySelector(".video-wrapper video"); // Assurez-vous que votre balise <video> est bien dans .video-wrapper
 
   document.body.addEventListener("click", (e) => {
-    if (
-      e.target.closest(".presentation-play-trigger") ||
-      e.target.classList.contains("close-video")
-    ) {
+    if (e.target.closest(".presentation-play-trigger") || e.target.classList.contains("close-video")) {
       wrapper.classList.toggle("show");
+
+      if (wrapper.classList.contains("show")) {
+        video.play();
+      } else {
+        video.pause();
+      }
     }
   });
 });

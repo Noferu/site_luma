@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/imports.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media_queries.css" />
 
     <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
   </head>
@@ -76,7 +77,10 @@
           </p>
 
           <video autoplay loop muted>
-            <source src="/assets/videos/luma_waving.mp4" type="video/mp4" />
+            <source
+              src="/assets/videos/luma_animations/waving.mp4"
+              type="video/mp4"
+            />
             Your browser does not support the WebM format.
           </video>
 
@@ -112,6 +116,7 @@
 
         <div class="content">
           <img
+            title="Florian MUSSARD"
             src="assets/svgs/charts/consumption-habits.svg"
             alt="Graphique démontrant la part de consommation"
           />
@@ -130,7 +135,7 @@
       <section id="standby-impact">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
-            fill="#fc638d"
+            fill="#f8e2d8"
             d="M0,288L48,256C96,224,192,160,288,138.7C384,117,480,139,576,122.7C672,107,768,53,864,32C960,11,1056,21,1152,42.7C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
@@ -148,8 +153,14 @@
 
         <img
           src="assets/svgs/user-interface/arrow-white.svg"
-          class="arrow-left"
-          alt="Flèche indiquant une direction vers la gauche"
+          class="arrow-left night"
+          alt="Flèche indiquant une direction vers la droite"
+        />
+
+        <img
+          src="assets/svgs/user-interface/arrow-green.svg"
+          class="arrow-left day"
+          alt="Flèche indiquant une direction vers la droite"
         />
 
         <h2>Quand tes appareils prennent une pause…</h2>
@@ -179,13 +190,22 @@
             <div class="infos">
               <!-- État "ON" -->
               <div class="state state-on">
-                <img
-                  src="/assets/svgs/charts/standby-impact-turnedon.svg"
-                  alt="Appareil en veille avec énergie consommée"
-                />
-                <video autoplay loop muted>
+                <video
+                  title="Chloé SALLUSTIO"
+                  class="animated-chart"
+                  autoplay
+                  loop
+                  muted
+                >
                   <source
-                    src="/assets/videos/luma_standby_on.mp4"
+                    src="/assets/videos/charts/standby-impact_turned_on.mp4"
+                    type="video/mp4"
+                  />
+                  Votre navigateur ne supporte pas le format vidéo.
+                </video>
+                <video class="animated-luma" autoplay loop muted>
+                  <source
+                    src="/assets/videos/luma_animations/sleeping_standby_on.mp4"
                     type="video/mp4"
                   />
                   Votre navigateur ne supporte pas le format vidéo.
@@ -194,13 +214,22 @@
 
               <!-- État "OFF" -->
               <div class="state state-off">
-                <img
-                  src="/assets/svgs/charts/standby-impact-turnedoff.svg"
-                  alt="Appareil complètement éteint sans énergie consommée"
-                />
-                <video autoplay loop muted>
+                <video
+                  title="Chloé SALLUSTIO"
+                  class="animated-chart"
+                  autoplay
+                  loop
+                  muted
+                >
                   <source
-                    src="/assets/videos/luma_standby_off.mp4"
+                    src="/assets/videos/charts/standby-impact_turned_off.mp4"
+                    type="video/mp4"
+                  />
+                  Votre navigateur ne supporte pas le format vidéo.
+                </video>
+                <video class="animated-luma" autoplay loop muted>
+                  <source
+                    src="/assets/videos/luma_animations/sleeping_standby_off.mp4"
                     type="video/mp4"
                   />
                   Votre navigateur ne supporte pas le format vidéo.
@@ -245,14 +274,26 @@
 
         <div class="content">
           <video autoplay loop muted>
-            <source src="/assets/videos/luma_bus.mp4" type="video/mp4" />
+            <source
+              src="/assets/videos/luma_animations/in_bus.mp4"
+              type="video/mp4"
+            />
             Your browser does not support the WebM format.
           </video>
 
-          <img
-            src="/assets/svgs/charts/resolution-consumption.svg"
-            alt="Graphique illustrant la consommation d'énergie selon la résolution vidéo"
-          />
+          <video
+            title="Nawfel IDA-ALI OU LAHSEN"
+            class="animated-chart"
+            autoplay
+            loop
+            muted
+          >
+            <source
+              src="/assets/videos/charts/resolution-consumption.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the WebM format.
+          </video>
         </div>
 
         <div class="text">
@@ -293,10 +334,13 @@
           et représente un coût non négligeable.
         </p>
 
-        <img
-          src="/assets/images/tech-purchase.png"
-          alt="Représentation graphique des impacts environnementaux des achats technologiques"
-        />
+        <video title="Marco SCHRAMM" class="animated-chart" autoplay loop muted>
+          <source
+            src="/assets/videos/charts/tech-purchase.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the WebM format.
+        </video>
 
         <p>
           Mais tu peux agir en optant pour des alternatives plus durables, et de
@@ -372,7 +416,7 @@
       <section id="historical-consumption">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
-            fill="#f8e2d8"
+            fill="#f6e0d6"
             d="M0,320L48,298.7C96,277,192,235,288,218.7C384,203,480,213,576,213.3C672,213,768,203,864,181.3C960,160,1056,128,1152,101.3C1248,75,1344,53,1392,42.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
@@ -385,10 +429,13 @@
             important. Changer cela commence par des gestes simples.
           </p>
 
-          <img
-            src="/assets/images/historical-consumption.png"
-            alt="Graphique représentant l'évolution de la consommation énergétique numérique de 2010 à 2025"
-          />
+          <video title="Manel HAMDAOUI" autoplay loop muted>
+            <source
+              src="assets/videos/charts/historical-consumption.mp4"
+              type="video/mp4"
+            />
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
         </div>
         <h2 class="subtitle">
           Évolution de la consommation énergétique numérique mondiale
@@ -403,6 +450,7 @@
             d="M0,160L48,154.7C96,149,192,139,288,122.7C384,107,480,85,576,117.3C672,149,768,235,864,261.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
+
         <h2>Relève le défi !</h2>
 
         <div class="interactive-content">
@@ -411,15 +459,11 @@
           </div>
 
           <div class="interactive-text">
-            <p>Consommation actuelle :</p>
-            <p class="co2-display">
-              <strong><span id="co2-reduction">0</span> kg CO₂e</strong>
-            </p>
-
             <p class="action-message">
-              Brise une pierre et fais le premier pas vers une consommation plus
-              responsable !
+              Brise une pierre et découvre un geste simple pour réduire ton
+              impact !
             </p>
+            <p class="action-emoji">💡</p>
           </div>
         </div>
       </section>

@@ -1,93 +1,70 @@
 const tower = document.getElementById("tower");
-const co2Reduction = document.getElementById("co2-reduction");
 const actionMessage = document.querySelector(".action-message");
+const actionEmoji = document.querySelector(".action-emoji");
 
 const stonesData = [
   {
-    reduction: 0.12,
     svg: "assets/svgs/building-blocks/adopte-le-mode-economie-d-energie.svg",
-    message: "Adopter le mode économie d'énergie réduit la consommation inutile de tes appareils."
+    message: "Chaque geste compte : active le mode économie d’énergie !",
+    emoji: "💡"
   },
   {
-    reduction: 0.2,
     svg: "assets/svgs/building-blocks/choisis-des-appareils-reconditionnes.svg",
-    message: "Choisir des appareils reconditionnés diminue l'impact écologique lié à la fabrication."
+    message: "Un appareil reconditionné, c’est un déchet en moins !",
+    emoji: "♻️"
   },
   {
-    reduction: 0.1,
     svg: "assets/svgs/building-blocks/diminue-le-temps-passe-en-ligne.svg",
-    message: "Réduire le temps passé en ligne limite l'énergie consommée par les serveurs."
+    message: "Moins de temps en ligne, plus de temps pour soi.",
+    emoji: "📴"
   },
   {
-    reduction: 0.15,
     svg: "assets/svgs/building-blocks/eteins-tes-appareils-inutilises.svg",
-    message: "Éteindre tes appareils inutilisés évite un gaspillage énergétique important."
+    message: "Éteindre, c’est éviter une consommation fantôme inutile.",
+    emoji: "🔌"
   },
   {
-    reduction: 0.18,
     svg: "assets/svgs/building-blocks/favorise-les-loisirs-numeriques-hors-ligne.svg",
-    message: "Favoriser les loisirs numériques hors ligne réduit ta dépendance à l'énergie des datacenters."
+    message: "Lire un livre ? Une alternative sans consommation d’énergie.",
+    emoji: "📖"
   },
   {
-    reduction: 0.25,
     svg: "assets/svgs/building-blocks/pre-telecharge-des-contenus.svg",
-    message: "Pré-télécharger des contenus limite l'usage continu de bande passante."
+    message: "Pré-télécharger, c’est réduire l’usage des serveurs en continu.",
+    emoji: "📥"
   },
   {
-    reduction: 0.05,
-    svg: "assets/svgs/building-blocks/prends-conscience-de-ton-impact.svg",
-    message: "Prendre conscience de ton impact est la première étape vers le changement."
-  },
-  {
-    reduction: 0.22,
     svg: "assets/svgs/building-blocks/recycle-tes-appareils-anciens.svg",
-    message: "Recycler tes appareils anciens prolonge leur durée de vie et réduit les déchets électroniques."
+    message: "Recycler, c’est prolonger la durée de vie de nos ressources.",
+    emoji: "🔄"
   },
   {
-    reduction: 0.14,
     svg: "assets/svgs/building-blocks/reduis-la-qualite-de-streaming.svg",
-    message: "Réduire la qualité de streaming limite la consommation énergétique inutile."
+    message: "Regarder en HD suffit souvent, inutile de forcer la 4K.",
+    emoji: "🎥"
   },
   {
-    reduction: 0.08,
-    svg: "assets/svgs/building-blocks/reflechis-avant-d-acheter-de-nouvelles-technologies.svg",
-    message: "Réfléchir avant d'acheter de nouvelles technologies évite les achats inutiles et réduit l'impact écologique."
-  },
-  {
-    reduction: 0.3,
     svg: "assets/svgs/building-blocks/utilise-le-wi-fi-plutot-que-la-4g.svg",
-    message: "Utiliser le Wi-Fi plutôt que la 4G consomme beaucoup moins d'énergie."
-  },
-  {
-    reduction: 0.07,
-    svg: "assets/svgs/building-blocks/utiliser-des-plateformes-eco-responsables.svg",
-    message: "Utiliser des plateformes éco-responsables encourage des pratiques plus durables."
+    message: "Le Wi-Fi consomme jusqu'à 5x moins d’énergie que la 4G.",
+    emoji: "📶"
   }
 ];
 
-const totalReduction = stonesData.reduce((total, stone) => total + stone.reduction, 0);
-let currentReduction = totalReduction;
-
-co2Reduction.textContent = currentReduction.toFixed(2);
-
-const soundPaths = [
-  "assets/sounds/break-stone-1.mp3",
-  "assets/sounds/break-stone-2.mp3",
-  "assets/sounds/break-stone-3.mp3",
-  "assets/sounds/break-stone-4.mp3",
-];
-
 function playRandomSound() {
+  const soundPaths = [
+    "assets/sounds/break-stone-1.mp3",
+    "assets/sounds/break-stone-3.mp3",
+    "assets/sounds/break-stone-4.mp3"
+  ];
   const randomIndex = Math.floor(Math.random() * soundPaths.length);
-  const sound = new Audio(soundPaths[randomIndex]);
-  sound.play();
+  new Audio(soundPaths[randomIndex]).play();
 }
 
-stonesData.forEach(({ reduction, svg, message }) => {
+stonesData.forEach(({ svg, message, emoji }) => {
   const stone = document.createElement("div");
   stone.classList.add("stone");
-  stone.dataset.reduction = reduction;
   stone.dataset.message = message;
+  stone.dataset.emoji = emoji;
 
   const img = document.createElement("img");
   img.src = svg;
@@ -100,41 +77,41 @@ stonesData.forEach(({ reduction, svg, message }) => {
   tower.appendChild(stone);
 });
 
-function showFlash() {
-  const flash = document.createElement("div");
-  flash.classList.add("flash");
-  document.body.appendChild(flash);
-
-  flash.addEventListener("animationend", () => flash.remove());
-}
-
-function shakeTower() {
-  tower.classList.add("shaking");
-  setTimeout(() => {
-    tower.classList.remove("shaking");
-  }, 300);
-}
-
 tower.addEventListener("click", (event) => {
   const stone = event.target.closest(".stone");
   if (stone) {
     playRandomSound();
-    showFlash();
-    shakeTower();
 
     stone.classList.add("removed");
     stone.addEventListener("animationend", () => {
       tower.removeChild(stone);
 
-      currentReduction -= parseFloat(stone.dataset.reduction);
-      co2Reduction.textContent = currentReduction.toFixed(2);
-
-      actionMessage.textContent = stone.dataset.message;
 
       if (tower.childElementCount === 0) {
-        actionMessage.textContent =
-          "Félicitations ! Tu as atteint une consommation neutre en carbone !";
+        actionMessage.classList.add("fade-out");
+        actionEmoji.classList.add("fade-out");
+
+        setTimeout(() => {
+          actionMessage.textContent = "Bravo ! Tu as adopté une consommation plus responsable.";
+          actionEmoji.textContent = "🎉";
+
+          actionMessage.classList.remove("fade-out");
+          actionEmoji.classList.remove("fade-out");
+        }, 300);
+      } else {
+
+        actionMessage.classList.add("fade-out");
+        actionEmoji.classList.add("fade-out");
+
+        setTimeout(() => {
+          actionMessage.textContent = stone.dataset.message;
+          actionEmoji.textContent = stone.dataset.emoji;
+
+          actionMessage.classList.remove("fade-out");
+          actionEmoji.classList.remove("fade-out");
+        }, 300);
       }
     });
   }
 });
+
