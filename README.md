@@ -1,43 +1,71 @@
-### **📘 README.md - Sobriété Numérique - Projet Luma**  
+# **📘 README.md - Sobriété Numérique - Projet LUMA**  
 
-# Sobriété Numérique - Projet Luma 🎯  
+## 🎯 **Présentation du projet**  
+LUMA est un site **one-page interactif** visant à sensibiliser à la **sobriété énergétique des loisirs numériques**. Il utilise des **visualisations de données dynamiques**, des **animations immersives**, et un **design engageant** pour informer et inciter aux bonnes pratiques.
 
-## 📌 Description  
-Ce site **one-page** sensibilise à la **sobriété énergétique des loisirs numériques**. Il utilise des **visualisations de données**, des **animations interactives** et un **design immersif**.  
+## 📁 **Structure du projet**  
+Le projet est organisé comme suit :
 
-## 📁 Structure du projet  
-- **index.html** → Structure HTML principale  
-- **style.css** → Feuille de style CSS  
-- **script.js** → Script principal  
-- **assets/** → Dossier contenant images, vidéos et animations  
-- **data/** → Données JSON utilisées par Chart.js  
-- **libs/** → Bibliothèques JS (Chart.js, GSAP, Lottie)  
-- **README.md** → Documentation du projet  
+```
+📦 site_luma
+├── 📜 index.html        # Structure principale du site
+├── 📜 README.md        # Documentation du projet
+├── 📜 script.js        # Scripts principaux
+├── 📜 building-blocks.js # Scripts pour les animations interactives
+│
+├── 📂 assets            # Contenus multimédias et visuels
+│   ├── 📂 fonts         # Polices utilisées (Gulfs Display)
+│   ├── 📂 icons         # Icônes du site (favicon, etc.)
+│   ├── 📂 images        # Illustrations et visuels
+│   ├── 📂 sounds        # Effets sonores (ex : bruits de pierres cassées)
+│   ├── 📂 svgs          # Graphiques vectoriels
+│   ├── 📂 videos        # Vidéos animées et motion design
+│
+├── 📂 css               # Feuilles de styles
+│   ├── 📜 imports.css   # Importation des polices et variables CSS
+│   ├── 📜 reset.css     # Réinitialisation des styles par défaut
+│   ├── 📜 style.css     # Styles principaux du site
+│
+└── 📂 graphiques_js     # Graphiques dynamiques
+    └── 📂 Nawfel        # Données et scripts Chart.js
+        ├── 📜 chart.js  
+        ├── 📜 index.html  
+```
 
-## 🔧 Technologies utilisées  
+## 🔧 **Technologies utilisées**  
 - **HTML5, CSS3, JavaScript**  
-- **Chart.js** pour les graphiques dynamiques  
-- **GSAP** pour les animations au scroll  
-- **Lottie.js** pour les animations SVG interactives  
+- **Chart.js** → Création de graphiques dynamiques  
+- **GSAP** → Animations au scroll  
+- **Lottie.js** → Animations SVG interactives  
 
-## 🎬 Fonctionnalités principales  
-✔️ **Visualisation des données** sur l'empreinte énergétique du numérique  
-✔️ **Animations interactives** pour un parcours engageant  
-✔️ **Optimisation du site** pour mobile et desktop  
-✔️ **Navigation fluide et immersive** avec GSAP  
+## 🎬 **Fonctionnalités principales**  
+✔️ **Visualisation de l’impact énergétique des loisirs numériques**  
+✔️ **Animations interactives et immersives**  
+✔️ **Optimisation pour mobile et desktop**  
+✔️ **Navigation fluide avec GSAP**  
 
-## 🛠️ Installation et exécution  
-1. **Cloner le projet**  
-   ```bash  
-   git clone https://github.com/votre-repo/mon-projet-sobriete-numerique.git  
-   cd mon-projet-sobriete-numerique  
-   ```  
-2. **Ouvrir `index.html` dans un navigateur**  
+## 🛠️ **Installation et exécution**  
+1️⃣ **Cloner le projet**  
+   ```bash
+   git clone https://github.com/votre-repo/site-luma.git
+   cd site-luma
+   ```
+2️⃣ **Ouvrir `index.html` dans un navigateur**  
 
-## 📜 Crédits  
+## 🎨 **Principaux éléments graphiques**  
+🔹 **Mascotte LUMA** → Guide les utilisateurs tout au long du parcours pédagogique.  
+🔹 **Schémas et graphiques dynamiques** → Présentent des comparaisons de consommation énergétique.  
+🔹 **Illustrations interactives** → Montrent l’impact des différentes pratiques numériques.  
+
+## 📜 **Crédits**  
 Projet réalisé dans le cadre de la **SAÉ 303 - Université de Strasbourg**.  
-Contributeurs : **Nawfel, Manel, Florian, Chloé, Marco.**  
+**Équipe :**  
+- **Nawfel IDA ALI OU LAHSEN** – Conception et développement  
+- **Manel HAMDAOUI**  
+- **Florian MUSSARD**  
+- **Chloé SALLUSTIO**  
+- **Marco SCHRAMM**  
 
-## 📩 Contact  
+## 📩 **Contact**  
 📧 nawfel.idaali.pro@gmail.com  
-🌐 [Portfolio](https://votre-site.com)  
+🌐 [Portfolio](ida.etu.mmi-unistra.fr)  

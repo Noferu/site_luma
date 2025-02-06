@@ -44,7 +44,7 @@
 
       <a href="#context-title" class="scroller">
         <img
-          src="/assets/svgs/scroll_indicator.svg"
+          src="/assets/svgs/user-interface/scroll_indicator.svg"
           alt="Indicateur pour défiler vers le bas"
         />
       </a>
@@ -60,7 +60,7 @@
         </svg>
 
         <img
-          src="assets/svgs/arrow-white.svg"
+          src="assets/svgs/user-interface/arrow-white.svg"
           class="arrow-left"
           alt="Flèche indiquant une direction vers la gauche"
         />
@@ -87,7 +87,11 @@
           </p>
         </div>
 
-        <img class="pattern" src="/assets/svgs/pattern_2.svg" alt="Pattern" />
+        <img
+          class="pattern"
+          src="/assets/svgs/user-interface/pattern.svg"
+          alt="Pattern"
+        />
       </section>
 
       <section id="consumption-habits">
@@ -99,7 +103,7 @@
         </svg>
 
         <img
-          src="assets/svgs/arrow-white.svg"
+          src="assets/svgs/user-interface/arrow-white.svg"
           class="arrow-right"
           alt="Flèche indiquant une direction vers la droite"
         />
@@ -108,7 +112,7 @@
 
         <div class="content">
           <img
-            src="assets/svgs/consumption-habits.svg"
+            src="assets/svgs/charts/consumption-habits.svg"
             alt="Graphique démontrant la part de consommation"
           />
           <p>
@@ -143,7 +147,7 @@
         </svg>
 
         <img
-          src="assets/svgs/arrow-white.svg"
+          src="assets/svgs/user-interface/arrow-white.svg"
           class="arrow-left"
           alt="Flèche indiquant une direction vers la gauche"
         />
@@ -176,7 +180,7 @@
               <!-- État "ON" -->
               <div class="state state-on">
                 <img
-                  src="/assets/svgs/standby-impact-turnedon.svg"
+                  src="/assets/svgs/charts/standby-impact-turnedon.svg"
                   alt="Appareil en veille avec énergie consommée"
                 />
                 <video autoplay loop muted>
@@ -191,7 +195,7 @@
               <!-- État "OFF" -->
               <div class="state state-off">
                 <img
-                  src="/assets/svgs/standby-impact-turnedoff.svg"
+                  src="/assets/svgs/charts/standby-impact-turnedoff.svg"
                   alt="Appareil complètement éteint sans énergie consommée"
                 />
                 <video autoplay loop muted>
@@ -208,12 +212,12 @@
             <div class="switch" onclick="toggleSwitch()">
               <img
                 class="switch-off"
-                src="/assets/svgs/switch_off.svg"
+                src="/assets/svgs/switch/switch_off.svg"
                 alt="Interrupteur éteint"
               />
               <img
                 class="switch-on"
-                src="/assets/svgs/switch_on.svg"
+                src="/assets/svgs/switch/switch_on.svg"
                 alt="Interrupteur allumé"
               />
             </div>
@@ -232,7 +236,7 @@
         </svg>
 
         <img
-          src="assets/svgs/arrow-green.svg"
+          src="assets/svgs/user-interface/arrow-green.svg"
           class="arrow-right"
           alt="Flèche indiquant une direction vers la droite"
         />
@@ -246,7 +250,7 @@
           </video>
 
           <img
-            src="/assets/svgs/resolution-consumption.svg"
+            src="/assets/svgs/charts/resolution-consumption.svg"
             alt="Graphique illustrant la consommation d'énergie selon la résolution vidéo"
           />
         </div>
@@ -276,7 +280,7 @@
         </svg>
 
         <img
-          src="assets/svgs/arrow-white.svg"
+          src="assets/svgs/user-interface/arrow-white.svg"
           class="arrow-left"
           alt="Flèche indiquant une direction vers la gauche"
         />
@@ -300,7 +304,7 @@
           <strong>tes envies</strong>.
 
           <img
-            src="assets/svgs/arrow-white.svg"
+            src="assets/svgs/user-interface/arrow-white.svg"
             class="arrow-custom"
             alt="Flèche gauche"
           />
@@ -399,8 +403,25 @@
             d="M0,160L48,154.7C96,149,192,139,288,122.7C384,107,480,85,576,117.3C672,149,768,235,864,261.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
-
         <h2>Relève le défi !</h2>
+
+        <div class="interactive-content">
+          <div id="tower-container">
+            <div id="tower"></div>
+          </div>
+
+          <div class="interactive-text">
+            <p>Consommation actuelle :</p>
+            <p class="co2-display">
+              <strong><span id="co2-reduction">0</span> kg CO₂e</strong>
+            </p>
+
+            <p class="action-message">
+              Brise une pierre et fais le premier pas vers une consommation plus
+              responsable !
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -410,6 +431,7 @@
         Accessible | Sobriété Numérique
       </p>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/building-blocks.js"></script>
   </body>
 </html>

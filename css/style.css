@@ -182,7 +182,7 @@ h2 {
 
 .video-wrapper video {
     position: absolute;
-    left:0;
+    left: 0;
     width: 100%;
     height: auto;
     border: solid 8px var(--sweet-orange);
@@ -191,17 +191,17 @@ h2 {
 
 .video-wrapper button {
     position: absolute;
-    cursor:pointer;
+    cursor: pointer;
     opacity: 0;
-    top:0;
+    top: 0;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 5px;
     background-color: #ff0000;
     border-radius: 100px;
-    border:none;
+    border: none;
     width: 40px;
     height: 40px;
     font-size: 140%;
-    color:var(--white);
+    color: var(--white);
     transition: 1s ease-in-out;
 }
 
@@ -211,7 +211,7 @@ h2 {
 
 .video-wrapper:hover button {
     opacity: 1;
-    top:5vh;
+    top: 5vh;
 }
 
 /* ========== Indicateur de Défilement ========== */
@@ -259,19 +259,19 @@ h2 {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.accordion > .accordion-item:nth-child(1) .accordion-header {
+.accordion>.accordion-item:nth-child(1) .accordion-header {
     font-weight: 900;
 }
 
-.accordion > .accordion-item:nth-child(2) .accordion-header {
+.accordion>.accordion-item:nth-child(2) .accordion-header {
     font-weight: 700;
 }
 
-.accordion > .accordion-item:nth-child(3) .accordion-header {
-    font-weight:500;
+.accordion>.accordion-item:nth-child(3) .accordion-header {
+    font-weight: 500;
 }
 
-.accordion > .accordion-item:nth-child(4) .accordion-header {
+.accordion>.accordion-item:nth-child(4) .accordion-header {
     font-weight: 300;
 }
 
@@ -454,7 +454,7 @@ section#consumption-habits .arrow-right {
 
 section#consumption-habits .content {
     justify-content: space-between;
-    gap:5vw;
+    gap: 5vw;
     align-items: center;
     text-align: start;
     width: 70vw;
@@ -463,7 +463,7 @@ section#consumption-habits .content {
 section#consumption-habits .content img {
     height: 400px;
     text-align: start;
-    width:auto;
+    width: auto;
 }
 
 /* ========== Section "Standby Impact" ========== */
@@ -513,12 +513,16 @@ section#standby-impact .state video {
 
 section#standby-impact .rich-content .switch {
     height: 150px;
+    cursor: pointer;
     width: auto;
 }
 
 section#standby-impact .rich-content .switch img {
     height: 100%;
     width: auto;
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: auto; 
 }
 
 /* ----- Statut "ON" ----- */
@@ -574,7 +578,7 @@ section#quality-choices div.content {
     width: 60vw;
     justify-content: center;
     align-items: center;
-    gap:3vw;
+    gap: 3vw;
 }
 
 section#quality-choices img {
@@ -642,6 +646,137 @@ h2.subtitle {
 
 section#challenge-yourself {
     background-color: var(--pink-main);
+}
+
+.interactive-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8vw;
+}
+
+.interactive-text {
+    width: 400px;
+    height: 300px;
+}
+
+.interactive-text strong {
+    font-size: 200%;
+}
+
+#tower {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: end;
+    align-items: end;
+    width: 300px;
+    height: 960px;
+    overflow: hidden;
+}
+
+#tower::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/images/building-wall.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+
+.stone {
+    width: 100%;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    user-select: none;
+}
+
+.stone img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.stone:hover img {
+    transform: scale(1.05);
+}
+
+.stone.removed {
+    animation: fall 0.5s forwards ease-out;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(50px) rotate(20deg);
+    }
+}
+
+
+.flash {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 0, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+    animation: flash 0.5s ease-out forwards;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shaking {
+    animation: shake 0.3s ease-in-out;
 }
 
 /* ========== Footer ========== */
